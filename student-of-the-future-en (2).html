@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="STUDENT OF THE FUTURE: a learning app for Grade 7 students with Math, Chemistry, Physics and Biology lessons, practice questions, competition info and scholarships.">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Student of the Future">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#3D5AFE">
+<meta name="format-detection" content="telephone=no">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<title>STUDENT OF THE FUTURE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F5FF; --surface:#FFFFFF; --ink:#14183E; --muted:#555A82; --line:#DCE1F4;
+  --mat:#3D5AFE; --kim:#087F5F; --fis:#D9432A; --bio:#4F8A00; --eng:#7A35E0; --pkn:#B5155F;
+  --sun:#FFC93C; --on-sun:#14183E; --good:#0B8A5F; --bad:#C8283D; --soft:#E8ECFF;
+  --display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E1130; --surface:#181C47; --ink:#EEF0FF; --muted:#A6ABD8; --line:#2C3172; --soft:#232860;
+    --good:#3DDC97; --bad:#FF7A8C;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E1130; --surface:#181C47; --ink:#EEF0FF; --muted:#A6ABD8; --line:#2C3172; --soft:#232860;
+  --good:#3DDC97; --bad:#FF7A8C;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+button,input,summary,label{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+button{-webkit-appearance:none;appearance:none}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.5;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--mat);outline-offset:2px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 18px 110px}
+h1,h2,h3{font-family:var(--display);margin:0;letter-spacing:-.02em;line-height:1.1}
+h2{font-size:1.45rem;margin-bottom:12px}
+h3{font-size:1.1rem}
+p{margin:0}
+.muted{color:var(--muted)}
+
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0}
+.brand{font-family:var(--display);font-weight:800;font-size:1rem;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
+.brand .logo{display:grid;place-items:center;width:34px;height:34px;border-radius:9px;background:var(--mat);color:#fff;font-size:.95rem;box-shadow:inset 0 0 0 2px rgba(255,255,255,.35)}
+.navd{display:none;gap:4px}
+.navd button,.navb button{background:none;border:0;border-radius:10px;padding:8px 14px;font-weight:600;color:var(--muted)}
+.navd button[aria-current="page"]{background:var(--ink);color:var(--bg)}
+.navb{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;background:var(--surface);border-top:1px solid var(--line);padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px))}
+.navb button{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:.72rem;padding:6px 2px}
+.navb button span{font-size:1.25rem;line-height:1}
+.navb button[aria-current="page"]{color:var(--mat);background:var(--soft)}
+@media (min-width:760px){.navd{display:flex}.navb{display:none}.wrap{padding-bottom:50px}}
+
+.hero{display:grid;gap:18px;grid-template-columns:1fr;align-items:center;padding:10px 0 6px}
+@media (min-width:760px){.hero{grid-template-columns:1.5fr 1fr}}
+.wordmark{font-weight:800;font-size:clamp(2.6rem,9vw,4.8rem);line-height:.92;letter-spacing:-.04em}
+.wordmark span{display:block}
+.wordmark .w2{color:var(--mat);padding-left:.55em}
+.wordmark .w3{padding-left:1.1em}
+.lede{margin-top:14px;max-width:46ch;color:var(--muted);font-size:1.05rem}
+.me{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:18px;display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center}
+.ring{position:relative;width:112px;height:112px}
+.ring svg{width:112px;height:112px;transform:rotate(-90deg)}
+.ring .t{fill:none;stroke:var(--soft);stroke-width:10}
+.ring .v{fill:none;stroke:var(--mat);stroke-width:10;stroke-linecap:round;transition:stroke-dashoffset .6s}
+.ring b{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--display);font-size:1.7rem}
+.me .who{font-weight:700;font-size:1.1rem}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.chip{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:99px;background:var(--soft);font-size:.82rem;font-weight:600;border:0}
+.namebox{display:flex;gap:6px;margin-top:8px}
+.namebox input{flex:1;min-width:0;font-size:16px;-webkit-appearance:none;appearance:none;border:1.5px solid var(--line);border-radius:10px;padding:9px 12px;font:inherit;background:var(--bg);color:var(--ink)}
+
+.btn{border:0;border-radius:12px;padding:11px 18px;font-weight:700;background:var(--ink);color:var(--bg)}
+.btn.sun{background:var(--sun);color:var(--on-sun)}
+.btn.ghost{background:transparent;border:1.5px solid var(--line);color:var(--ink)}
+.btn.sm{padding:7px 12px;font-size:.88rem}
+.btn:active{transform:translateY(1px)}
+
+section.blk{margin-top:30px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px}
+
+.daily{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;background:var(--sun);color:var(--on-sun);border-radius:22px;padding:20px 22px;margin-top:22px}
+.daily h3{font-size:1.4rem}
+.daily p{max-width:42ch;margin-top:4px}
+.daily .btn{background:var(--on-sun);color:#fff}
+.daily .btn[disabled]{opacity:.6}
+
+.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media (min-width:760px){.tiles{grid-template-columns:repeat(3,1fr)}}
+.tile{position:relative;aspect-ratio:1/1.08;border:0;border-radius:16px;padding:12px;text-align:left;color:#fff;background:var(--c);display:flex;flex-direction:column;justify-content:space-between;box-shadow:inset 0 0 0 2px rgba(255,255,255,.3);transition:transform .15s}
+.tile:hover{transform:translateY(-3px)}
+.tile .top1{font-size:.8rem;font-weight:700;opacity:.95}
+.tile .sym{font-family:var(--display);font-weight:800;font-size:clamp(2.6rem,9vw,3.6rem);line-height:1;letter-spacing:-.04em}
+.tile .nm{font-weight:700;font-size:1rem}
+.tile .sub{font-size:.78rem;opacity:.92}
+.tile[data-s="mat"]{--c:var(--mat)}.tile[data-s="kim"]{--c:var(--kim)}.tile[data-s="fis"]{--c:var(--fis)}.tile[data-s="bio"]{--c:var(--bio)}.tile[data-s="eng"]{--c:var(--eng)}.tile[data-s="pkn"]{--c:var(--pkn)}
+
+.grid2{display:grid;gap:12px;grid-template-columns:1fr}
+@media (min-width:760px){.grid2{grid-template-columns:1fr 1fr}}
+.row{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.tag{display:inline-block;padding:3px 9px;border-radius:8px;font-size:.78rem;font-weight:700;background:var(--soft)}
+.tag.open{background:#D6F5E6;color:#05603F}
+.tag.soon{background:#FFE9B8;color:#6B4600}
+.tag.closed{background:#FFD9DE;color:#8E1226}
+.meta{display:grid;grid-template-columns:auto 1fr;gap:2px 10px;font-size:.9rem;margin-top:10px}
+.meta dt{color:var(--muted)}.meta dd{margin:0;font-weight:600}
+.filters{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:14px}
+.filters .chip{border:1.5px solid transparent;white-space:nowrap;padding:7px 14px}
+.filters .chip[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.notice{background:var(--soft);border-radius:12px;padding:10px 14px;font-size:.88rem;margin-bottom:14px}
+.star{background:none;border:0;font-size:1.3rem;line-height:1}
+
+.lb{list-style:none;margin:0;padding:0}
+.lb li{display:flex;align-items:center;gap:12px;padding:10px 4px;border-bottom:1px solid var(--line)}
+.lb li:last-child{border:0}
+.lb .pos{width:28px;font-family:var(--display);font-weight:800}
+.lb .nm{flex:1;font-weight:600}
+.lb .me1{background:var(--soft);border-radius:10px;padding-left:10px;padding-right:10px}
+
+.back{background:none;border:0;font-weight:700;color:var(--muted);padding:6px 0;margin-bottom:6px}
+.subhead{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.subhead .sym{display:grid;place-items:center;width:64px;height:64px;border-radius:14px;background:var(--c);color:#fff;font-family:var(--display);font-weight:800;font-size:1.9rem;box-shadow:inset 0 0 0 2px rgba(255,255,255,.3)}
+.tabs{display:flex;gap:6px;margin-bottom:14px}
+.tabs button{border:1.5px solid var(--line);background:transparent;border-radius:10px;padding:8px 16px;font-weight:700}
+.tabs button[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:4px 16px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:700;padding:12px 0;font-family:var(--display);font-size:1.05rem}
+details ul{margin:0 0 10px;padding-left:20px}
+details li{margin-bottom:6px}
+.fact{background:var(--soft);border-radius:10px;padding:8px 12px;margin:6px 0 14px;font-size:.92rem}
+
+.qwrap{max-width:680px;margin:6px auto 0}
+.qtop{display:flex;justify-content:space-between;font-weight:700;margin-bottom:8px}
+.bar{height:10px;border-radius:99px;background:var(--soft);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--c,var(--mat));border-radius:99px;transition:width .3s}
+.bar.timer i{background:var(--sun);transition:none}
+.qcard{margin-top:16px}
+.qcard .q{font-family:var(--display);font-size:1.4rem;line-height:1.25;margin-bottom:16px}
+.opt{display:block;width:100%;text-align:left;background:var(--bg);border:2px solid var(--line);border-radius:12px;padding:13px 14px;margin-bottom:10px;font-weight:600}
+.opt:hover:not([disabled]){border-color:var(--mat)}
+.opt.ok{border-color:var(--good);background:var(--soft);background:color-mix(in srgb,var(--good) 14%,var(--surface))}
+.opt.bad{border-color:var(--bad);background:var(--soft);background:color-mix(in srgb,var(--bad) 12%,var(--surface))}
+.expl{margin-top:6px;padding:12px 14px;border-radius:12px;background:var(--soft)}
+.result{text-align:center;padding:26px 18px}
+.result .big{font-family:var(--display);font-weight:800;font-size:3.4rem;line-height:1}
+.stars{font-size:2rem;letter-spacing:6px;margin:8px 0}
+.actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:16px}
+
+.req{display:flex;gap:10px;align-items:flex-start;padding:7px 0;font-size:.95rem}
+.req input{width:20px;height:20px;margin-top:2px;accent-color:var(--kim)}
+
+.badges{display:grid;gap:10px;grid-template-columns:repeat(2,1fr)}
+@media (min-width:760px){.badges{grid-template-columns:repeat(4,1fr)}}
+.badge{border:1px solid var(--line);background:var(--surface);border-radius:16px;padding:14px;text-align:center}
+.badge .e{font-size:2rem}
+.badge.lock{opacity:.5;filter:grayscale(1)}
+.badge b{display:block;font-size:.92rem}
+.badge small{color:var(--muted)}
+.toast{position:fixed;left:50%;bottom:calc(88px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:11px 18px;border-radius:14px;font-weight:700;z-index:50;max-width:92vw;text-align:center}
+.foot{margin-top:36px;font-size:.84rem;color:var(--muted);text-align:center}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.wordmark{animation:rise .6s ease-out both}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand"><span class="logo">SF</span><span>Student of the Future</span></div>
+    <nav class="navd" id="navd" aria-label="Main menu"></nav>
+  </header>
+  <main id="view"></main>
+  <p class="foot">STUDENT OF THE FUTURE is a demo app for Grade 7 students. All competition names, organizers, dates and scholarships shown here are fictional sample data. Please verify with official sources before registering for anything.</p>
+</div>
+<nav class="navb" id="navb" aria-label="Main menu"></nav>
+<div id="toastbox" aria-live="polite"></div>
+
+<script>
+(function(){
+"use strict";
+var KEY="sotf_v1_en";
+function $(s){return document.querySelector(s);}
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+
+var DEFAULT_STATE=function(){return {name:"",xp:0,streak:0,lastDay:"",best:{},right:{},played:{},quizzes:0,perfect:false,dailyDone:"",dailyScore:0,badges:[],reqs:{},saved:[],theme:"auto"};};
+var S=DEFAULT_STATE();
+try{var raw=localStorage.getItem(KEY);if(raw){S=Object.assign(S,JSON.parse(raw));}}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+function dayStr(d){d=d||new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");}
+function applyTheme(){var r=document.documentElement;if(S.theme==="auto"){r.removeAttribute("data-theme");}else{r.setAttribute("data-theme",S.theme);}}
+applyTheme();
+
+/* ---------- content (sample data, free to extend) ---------- */
+var SUBJ={
+mat:{name:"Mathematics",sym:"Mt",
+ topics:[
+  {t:"Integers",p:["Integers include negative numbers, zero, and positive numbers.","Adding numbers with different signs: subtract their absolute values, then keep the sign of the number with the larger absolute value.","A negative times a negative gives a positive."],f:"A temperature of -5°C and a depth of -10 m below sea level are everyday examples of negative numbers."},
+  {t:"Fractions and percentages",p:["Make the denominators the same before adding or subtracting fractions.","Percent means per hundred, so 25% = 25/100 = 1/4.","To find x% of N, calculate x/100 × N."],f:"A 20% discount on a Rp100,000 item means you save Rp20,000."},
+  {t:"Basic algebra",p:["A variable (such as x) stands for a number you do not know yet.","A one-variable linear equation stays balanced: do the same operation on both sides.","Example: 2x + 5 = 17, so 2x = 12, therefore x = 6."],f:"Algebra is a language for writing patterns, from taxi fares to physics formulas."},
+  {t:"Angles and plane shapes",p:["The angles inside a triangle always add up to 180°.","Perimeter of a rectangle = 2 × (length + width).","Area of a rectangle = length × width."],f:"A right angle is 90°, like the corner of your notebook."}
+ ],
+ qs:[
+  {q:"What is the result of -7 + 12 - 3?",o:["2","-2","8","22"],a:0,e:"-7 + 12 = 5, then 5 - 3 = 2."},
+  {q:"What is 3/4 + 1/8?",o:["4/12","7/8","1/2","5/4"],a:1,e:"3/4 = 6/8, so 6/8 + 1/8 = 7/8."},
+  {q:"What is the value of x in 2x + 5 = 17?",o:["5","11","6","7"],a:2,e:"2x = 17 - 5 = 12, so x = 12 ÷ 2 = 6."},
+  {q:"Adi and Budi have marbles in the ratio 3 : 5. Together they have 40. How many does Budi have?",o:["15","25","24","20"],a:1,e:"There are 8 parts in total. One part = 40 ÷ 8 = 5. Budi has 5 × 5 = 25."},
+  {q:"A rectangle measures 12 cm × 7 cm. What is its perimeter?",o:["84 cm","19 cm","38 cm","76 cm"],a:2,e:"Perimeter = 2 × (12 + 7) = 2 × 19 = 38 cm."},
+  {q:"Two angles of a triangle are 65° and 48°. What is the third angle?",o:["67°","77°","57°","113°"],a:0,e:"180° - 65° - 48° = 67°."},
+  {q:"What is the mean of 6, 8, 9, 5, 7?",o:["6","8","7","35"],a:2,e:"The sum is 35 and there are 5 values, so the mean is 35 ÷ 5 = 7."},
+  {q:"What is 25% of 240?",o:["60","25","96","48"],a:0,e:"25% = 1/4, and 240 ÷ 4 = 60."}
+ ]},
+kim:{name:"Chemistry",sym:"Ki",
+ topics:[
+  {t:"Matter and its states",p:["Solid: fixed shape and fixed volume.","Liquid: fixed volume, takes the shape of its container.","Gas: takes both the shape and volume of its container."],f:"Ice, water, and steam are the same substance (H2O) in three different states."},
+  {t:"Elements, compounds, and mixtures",p:["Element: a pure substance that cannot be broken down by ordinary chemical means (e.g. Na, O).","Compound: elements combined in a fixed ratio (e.g. H2O).","Mixture: substances combined without chemical bonds (e.g. salt water, soil)."],f:"The symbol Na for sodium comes from its Latin name, natrium."},
+  {t:"Separating mixtures",p:["Filtration: separates an insoluble solid from a liquid.","Evaporation: separates a dissolved solid from its solvent.","Distillation: separates liquids based on different boiling points."],f:"Table salt is made by evaporating seawater in salt ponds."},
+  {t:"Physical and chemical changes",p:["Physical change: no new substance forms (ice melting, paper torn).","Chemical change: a new substance forms (iron rusting, wood burning).","Signs of a chemical change: gas, precipitate, colour change, temperature change."],f:"Sour milk is a chemical change because new substances with a different taste and smell have formed."}
+ ],
+ qs:[
+  {q:"Salt water is classified as ...",o:["An element","A compound","A homogeneous mixture","A heterogeneous mixture"],a:2,e:"Salt dissolves evenly in water, so it is a homogeneous mixture (a solution)."},
+  {q:"The best way to separate sand from water is ...",o:["Filtration","Distillation","Evaporation","Chromatography"],a:0,e:"Sand does not dissolve, so it can be filtered out."},
+  {q:"Which of these is a chemical change?",o:["Ice melting","Sugar dissolving in water","Iron rusting","Paper being cut"],a:2,e:"Rusting forms a new substance (rust, iron oxide)."},
+  {q:"What is the chemical symbol for sodium?",o:["Ne","Na","N","K"],a:1,e:"Na is sodium. K is potassium."},
+  {q:"H2O is a ...",o:["Element","Compound","Mixture","Atom"],a:1,e:"H2O is made of hydrogen and oxygen in a fixed ratio, so it is a compound."},
+  {q:"Alcohol and water can be separated by ...",o:["Filtration","Sieving","Distillation","Decanting"],a:2,e:"Alcohol and water have different boiling points, so distillation works."},
+  {q:"Which state of matter has a fixed shape and fixed volume?",o:["Solid","Liquid","Gas","Plasma"],a:0,e:"The particles of a solid are packed closely in a regular pattern."},
+  {q:"In a sugar solution, the solvent is ...",o:["Sugar","Water","Both","Air"],a:1,e:"The solvent is the substance that dissolves the other, which is water. Sugar is the solute."}
+ ]},
+fis:{name:"Physics",sym:"Fi",
+ topics:[
+  {t:"Quantities and units",p:["Base quantities include mass (kg), length (m), time (s), and temperature (K).","Derived quantities come from base quantities, such as area, volume, and speed.","Length tools: ruler, vernier caliper (more precise), micrometer screw gauge (most precise)."],f:"The SI unit of mass is the kilogram, not the gram."},
+  {t:"Temperature and heat",p:["Kelvin = Celsius + 273.","Heat travels by conduction, convection, and radiation.","While ice melts, its temperature stays at 0°C because the heat is used to change its state."],f:"The Sun's heat reaches Earth by radiation, with no medium needed."},
+  {t:"Speed",p:["Speed = distance ÷ time.","Common units: m/s and km/h.","1 m/s = 3.6 km/h."],f:"If 120 km is covered in 2 hours, the average speed is 60 km/h."},
+  {t:"Density",p:["Density ρ = m ÷ V.","Units: g/cm³ or kg/m³.","An object floats if its density is lower than the density of the liquid."],f:"Water has a density of 1 g/cm³, which is why wood (lower density) floats."}
+ ],
+ qs:[
+  {q:"The SI unit of mass is the ...",o:["gram","kilogram","ton","newton"],a:1,e:"In the International System of Units, mass is measured in kilograms (kg)."},
+  {q:"A temperature of 25°C equals how many kelvin?",o:["248 K","25 K","273 K","298 K"],a:3,e:"K = °C + 273 = 25 + 273 = 298 K."},
+  {q:"A car travels 120 km in 2 hours. What is its average speed?",o:["240 km/h","60 km/h","122 km/h","30 km/h"],a:1,e:"v = s ÷ t = 120 ÷ 2 = 60 km/h."},
+  {q:"Which tool measures length more precisely than a ruler?",o:["Tape measure","Vernier caliper","Protractor","Balance"],a:1,e:"A vernier caliper reads to 0.1 mm or 0.05 mm."},
+  {q:"Heat transfer that needs no medium is called ...",o:["Conduction","Convection","Radiation","Evaporation"],a:2,e:"Radiation can travel through a vacuum, like sunlight reaching Earth."},
+  {q:"Which of these is a derived quantity?",o:["Mass","Time","Length","Area"],a:3,e:"Area = length × width, so it is derived from the base quantity length."},
+  {q:"An object has a mass of 200 g and a volume of 50 cm³. What is its density?",o:["4 g/cm³","0.25 g/cm³","10 g/cm³","150 g/cm³"],a:0,e:"ρ = m ÷ V = 200 ÷ 50 = 4 g/cm³."},
+  {q:"The heat used to turn ice into water without raising its temperature is called ...",o:["Specific heat","Latent heat of fusion","Latent heat of vaporization","Radiant heat"],a:1,e:"Latent heat of fusion changes a solid into a liquid at the melting point."}
+ ]},
+bio:{name:"Biology",sym:"Bi",
+ topics:[
+  {t:"Classification of living things",p:["Taxonomic ranks from largest to smallest: kingdom, phylum, class, order, family, genus, species.","Species is the smallest taxonomic rank.","Scientific names use binomial nomenclature: genus + species (e.g. Oryza sativa)."],f:"Binomial nomenclature was popularized by Carolus Linnaeus."},
+  {t:"Photosynthesis",p:["Green plants make their own food using sunlight.","Inputs: water, carbon dioxide, light. Outputs: glucose and oxygen.","Photosynthesis happens in chloroplasts, which contain chlorophyll."],f:"Much of the oxygen we breathe comes from photosynthesis by plants and algae."},
+  {t:"Ecosystems and food chains",p:["Producers: green plants. Consumers: animals. Decomposers: fungi and bacteria.","Herbivores eat plants, carnivores eat animals, omnivores eat both.","A food chain shows the direction energy flows."],f:"In a food chain, arrows point from the organism being eaten to the one eating it."},
+  {t:"Interactions between organisms",p:["Mutualism: both sides benefit (bees and flowers).","Commensalism: one benefits, the other is unaffected.","Parasitism: one benefits, the other is harmed."],f:"Bacteria in the human gut help with digestion, an example of a mutually beneficial relationship."}
+ ],
+ qs:[
+  {q:"The smallest taxonomic rank is ...",o:["Genus","Family","Species","Order"],a:2,e:"From largest: kingdom, phylum, class, order, family, genus, species."},
+  {q:"The products of photosynthesis are ...",o:["Glucose and oxygen","Water and carbon dioxide","Protein and fat","Nitrogen and chlorophyll"],a:0,e:"Inputs: water + CO2 + light. Outputs: glucose + O2."},
+  {q:"An animal that eats only plants is called a ...",o:["Carnivore","Omnivore","Herbivore","Insectivore"],a:2,e:"Herbivores, such as cows and goats."},
+  {q:"Who introduced binomial nomenclature?",o:["Charles Darwin","Carolus Linnaeus","Gregor Mendel","Louis Pasteur"],a:1,e:"Carolus Linnaeus introduced the two-word scientific name."},
+  {q:"Producers in an ecosystem are ...",o:["Green plants","Lions","Fungi","Grasshoppers"],a:0,e:"Producers make their own food through photosynthesis."},
+  {q:"Which of these is a vertebrate?",o:["Butterfly","Earthworm","Snail","Catfish"],a:3,e:"Fish are vertebrates because they have a backbone."},
+  {q:"The relationship between bees and flowers is an example of ...",o:["Parasitism","Mutualism","Predation","Competition"],a:1,e:"Bees get nectar and flowers get pollinated: both benefit."},
+  {q:"Which food chain is in the correct order?",o:["Snake → frog → grasshopper → grass","Grasshopper → grass → frog → snake","Grass → grasshopper → frog → snake","Frog → grass → snake → grasshopper"],a:2,e:"Energy flows from the producer (grass) to each consumer in turn."}
+ ]},
+eng:{name:"English",sym:"En",
+ topics:[
+  {t:"Simple present tense",p:["Use it for habits, routines, and facts: She walks to school every day.","With he, she, and it, add -s or -es to the verb: He watches TV.","Negatives and questions use do/does + the base verb: He does not like fish. Does she play tennis?"],f:"Adverbs of frequency such as always, usually, and never go before the main verb: I usually wake up at 5."},
+  {t:"Present continuous tense",p:["Use it for actions happening right now.","Form: am / is / are + verb-ing: They are studying.","Time clues: now, right now, at the moment."],f:"Some verbs, like know and like, are not normally used in the continuous form."},
+  {t:"Descriptive text",p:["A descriptive text describes a person, animal, place, or thing.","Structure: identification (who or what is being described), then description (appearance, qualities, characteristics).","It is usually written in the simple present tense."],f:"Good descriptions use specific adjectives: a tall, friendly girl is clearer than a nice girl."},
+  {t:"Articles, prepositions, and possessives",p:["Use an before a vowel sound: an orange, an hour. Use a before a consonant sound: a book.","Prepositions of place: in, on, under, next to, between, behind.","Possessive adjectives: my, your, his, her, its, our, their."],f:"We say an hour (silent h) but a university (it starts with a y sound)."}
+ ],
+ qs:[
+  {q:"My sister ___ to school by bus every day.",o:["go","goes","going","is go"],a:1,e:"With she, he, or it in the simple present, add -es or -s to the verb: goes."},
+  {q:"Right now, the students ___ in the library.",o:["study","studies","are studying","studied"],a:2,e:"Right now signals the present continuous: are + studying."},
+  {q:"The cat is sleeping ___ the sofa.",o:["on","at","from","to"],a:0,e:"We use on for something resting on a surface."},
+  {q:"She is eating ___ orange.",o:["a","an","the one","some one"],a:1,e:"Orange begins with a vowel sound, so we use an."},
+  {q:"Tina and Rani love ___ teacher.",o:["they","them","their","theirs"],a:2,e:"Their is the possessive adjective for they and goes before a noun."},
+  {q:"He ___ like spicy food.",o:["don't","doesn't","isn't","not"],a:1,e:"With he in the simple present, the negative is does not (doesn't) + base verb."},
+  {q:"In a descriptive text, the identification part tells us ...",o:["How to make something","What happened in the past","Who or what is being described","The writer's opinion of the ending"],a:2,e:"Identification introduces the person, animal, place, or thing being described."},
+  {q:"Which word is the opposite of huge?",o:["Tiny","Heavy","Famous","Ancient"],a:0,e:"Huge means very big. Tiny means very small."}
+ ]},
+pkn:{name:"Civics (PPKn)",sym:"Pn",
+ topics:[
+  {t:"Pancasila: the five principles",p:["1st: Belief in the One and Only God (symbol: star).","2nd: Just and civilized humanity (symbol: chain). 3rd: The unity of Indonesia (symbol: banyan tree).","4th: Democracy guided by wisdom in deliberation and representation (symbol: wild bull's head). 5th: Social justice for all Indonesian people (symbol: rice and cotton)."],f:"Soekarno gave his famous speech on Pancasila on 1 June 1945, which is why Pancasila Day is commemorated on 1 June."},
+  {t:"The 1945 Constitution (UUD 1945)",p:["It is the written constitution, the highest law of Indonesia.","Its Preamble states the aims of the nation and contains Pancasila.","It was ratified by the PPKI on 18 August 1945, one day after the proclamation of independence."],f:"Indonesia proclaimed its independence on 17 August 1945."},
+  {t:"Unity in Diversity (Bhinneka Tunggal Ika)",p:["It means different, yet one.","It comes from an old Javanese text, Sutasoma, written by Mpu Tantular.","It is written on the banner held by the Garuda Pancasila."],f:"Indonesia has hundreds of ethnic groups and regional languages, so tolerance is part of daily life."},
+  {t:"Norms, rights, and obligations",p:["Common norms: religious, moral, courtesy, and legal norms.","A right is something we are entitled to receive. An obligation is something we must do.","Rights and obligations must be balanced: the right to education comes with the obligation to follow school rules."],f:"Legal norms have formal sanctions, while courtesy norms are enforced by social opinion."}
+ ],
+ qs:[
+  {q:"The first principle of Pancasila is ...",o:["Belief in the One and Only God","Just and civilized humanity","The unity of Indonesia","Social justice for all Indonesian people"],a:0,e:"The five principles in order: belief in God, humanity, unity, democracy, and social justice."},
+  {q:"The symbol of the third principle (The unity of Indonesia) is ...",o:["Chain","Banyan tree","Rice and cotton","Wild bull's head"],a:1,e:"The banyan tree represents unity. The chain is the 2nd, the bull's head the 4th, and rice and cotton the 5th."},
+  {q:"Bhinneka Tunggal Ika means ...",o:["Together we stand strong","Different yet one","One nation, one language","Unity in the army"],a:1,e:"It literally means different, yet one: unity in diversity."},
+  {q:"Pancasila Day on 1 June commemorates the speech of ...",o:["Soekarno","Ki Hajar Dewantara","Sudirman","Kartini"],a:0,e:"Soekarno presented his ideas on the basis of the state on 1 June 1945."},
+  {q:"Which symbol represents the fifth principle, social justice for all Indonesian people?",o:["Star","Chain","Rice and cotton","Banyan tree"],a:2,e:"Rice and cotton stand for food and clothing, the basic needs of all people."},
+  {q:"Doing homework and obeying school rules are examples of ...",o:["Rights","Obligations","Privileges","Rewards"],a:1,e:"An obligation is something we must do, such as studying and following the rules."},
+  {q:"A norm that comes from the teachings of religion is called a ...",o:["Legal norm","Courtesy norm","Religious norm","Moral norm"],a:2,e:"Religious norms are based on religious teachings and guide believers."},
+  {q:"The 1945 Constitution was ratified by the PPKI on ...",o:["17 August 1945","18 August 1945","1 June 1945","28 October 1928"],a:1,e:"The PPKI ratified UUD 1945 on 18 August 1945, the day after independence was proclaimed."}
+ ]}
+};
+var KEYS=["mat","kim","fis","bio","eng","pkn"];
+var SUBJ_COLOR={mat:"var(--mat)",kim:"var(--kim)",fis:"var(--fis)",bio:"var(--bio)",eng:"var(--eng)",pkn:"var(--pkn)"};
+
+var CONTESTS=[
+ {id:"c1",n:"Junior Science Olympiad Nusantara",org:"Pelita Science Foundation (fictional)",m:["mat","kim","fis","bio"],lv:"Junior high, Grades 7 to 9",mode:"Online, 2 rounds",reg:"2026-11-10",ev:"2026-12-05",fee:"Free",d:"School selection, then a provincial final. Past papers with worked solutions are provided."},
+ {id:"c2",n:"Garuda Muda Mathematics Competition",org:"Math Lovers Community (fictional)",m:["mat"],lv:"Junior high, Grades 7 and 8",mode:"On-site, provincial capital",reg:"2026-10-25",ev:"2026-11-14",fee:"Rp50,000",d:"60 multiple-choice questions and 10 short-answer questions in 120 minutes."},
+ {id:"c3",n:"Green Chemistry Quiz Bowl",org:"Young Science Laboratory (fictional)",m:["kim"],lv:"Junior high, teams of 3",mode:"On-site",reg:"2026-11-20",ev:"2027-01-16",fee:"Rp75,000 per team",d:"Written preliminary, buzzer-style semifinal, and a simple experiment in the final."},
+ {id:"c4",n:"Physics Fun Cup: Water Rockets",org:"Nusantara Physics Club (fictional)",m:["fis"],lv:"Junior high, teams of 3",mode:"On-site, outdoor practical",reg:"2026-10-18",ev:"2026-11-07",fee:"Free",d:"Build a rocket from recycled bottles and aim for a target distance."},
+ {id:"c5",n:"Bio Explorer Challenge",org:"Nature Education Center (fictional)",m:["bio"],lv:"Junior high, Grades 7 to 9",mode:"Field observation and presentation",reg:"2026-12-01",ev:"2027-02-06",fee:"Rp40,000",d:"Observe an ecosystem near you, then present your findings in 5 minutes."},
+ {id:"c6",n:"Nusantara Young Scientist Paper Contest",org:"Young Researchers Forum (fictional)",m:["umum"],lv:"Junior and senior high",mode:"Online, submit essay and poster",reg:"2027-01-15",ev:"2027-03-13",fee:"Free",d:"Theme: science for Indonesia 2045. Winners receive mentoring from a researcher."},
+ {id:"c7",n:"Junior Student Robotics Competition",org:"Student Robotics Association (fictional)",m:["umum"],lv:"Junior high, teams of 2",mode:"On-site",reg:"2026-09-15",ev:"2026-10-17",fee:"Rp100,000 per team",d:"Registration is closed. Watch for the next edition."}
+ ,{id:"c8",n:"Young Orators English Speech Contest",org:"Bright English Club (fictional)",m:["eng"],lv:"Junior high, Grades 7 to 9",mode:"On-site, individual",reg:"2026-11-05",ev:"2026-11-28",fee:"Rp30,000",d:"Deliver a 3-minute speech on a topic of your choice, followed by a short Q&A."},
+ {id:"c9",n:"Pancasila and Civics Quiz Bowl",org:"Young Citizens Forum (fictional)",m:["pkn"],lv:"Junior high, teams of 3",mode:"On-site, three rounds",reg:"2027-02-10",ev:"2027-03-06",fee:"Free",d:"Questions on Pancasila, the 1945 Constitution, Unity in Diversity, and the rights and obligations of citizens."}
+];
+var SCHOL=[
+ {id:"s1",n:"Cahaya Bangsa Scholarship",org:"Cahaya Bangsa Institute (fictional)",b:"One year of tuition and a book package",dl:"2026-12-15",r:["Latest report card (average of at least 85)","Certificate of active enrollment","Teacher recommendation letter","Essay \"Me in 2045\" (maximum 500 words)","Copy of family card and birth certificate"]},
+ {id:"s2",n:"Garuda Muda Achievement Scholarship",org:"Garuda Muda Foundation (fictional)",b:"Rp6,000,000 per year",dl:"2027-01-31",r:["Certificate from a city or provincial competition","Last two semesters' report cards","Achievement portfolio (maximum 3 pages)","Parent or guardian statement letter"]},
+ {id:"s3",n:"Nusantara STEM Scholarship",org:"Future Science Program (fictional)",b:"Science mentor and olympiad preparation classes",dl:"2027-03-10",r:["Math and Science grades of at least 85","1-minute self-introduction video","Simple science project (photos and description)","Science teacher recommendation"]},
+ {id:"s4",n:"Regional High Achiever Scholarship",org:"Regional Education Fund (fictional)",b:"Allowance of Rp500,000 per month",dl:"2026-11-30",r:["Parent or guardian income statement","Latest report card","Certificate of active enrollment","Photos of school activities or achievements"]}
+];
+var RIVALS=[{n:"Nadia",x:520},{n:"Raka",x:410},{n:"Salsa",x:365},{n:"Dimas",x:280},{n:"Kenzo",x:190}];
+var BADGES=[
+ {id:"first",e:"🚀",n:"First Step",d:"Finish 1 practice set",ok:function(){return S.quizzes>=1;}},
+ {id:"perfect",e:"💯",n:"Perfect Score",d:"Answer every question correctly",ok:function(){return S.perfect;}},
+ {id:"explorer",e:"🧪",n:"Science Explorer",d:"Try all six subjects",ok:function(){return KEYS.every(function(k){return S.played[k];});}},
+ {id:"daily",e:"⚡",n:"Daily Fighter",d:"Complete a daily challenge",ok:function(){return !!S.dailyDone;}},
+ {id:"hunter",e:"🎓",n:"Scholarship Hunter",d:"Tick 3 requirements",ok:function(){return reqCount()>=3;}},
+ {id:"lv3",e:"⭐",n:"Level 3",d:"Reach level 3",ok:function(){return level()>=3;}},
+ {id:"streak3",e:"🔥",n:"On Fire",d:"Study 3 days in a row",ok:function(){return S.streak>=3;}},
+ {id:"saver",e:"🏆",n:"Future Champion",d:"Save 2 competitions",ok:function(){return S.saved.length>=2;}}
+];
+
+/* ---------- helpers ---------- */
+function level(){return Math.floor(S.xp/100)+1;}
+function reqCount(){var n=0;Object.keys(S.reqs).forEach(function(k){(S.reqs[k]||[]).forEach(function(v){if(v)n++;});});return n;}
+function fmtDate(s){return new Date(s+"T00:00:00").toLocaleDateString("en-GB",{day:"numeric",month:"long",year:"numeric"});}
+function daysLeft(s){var t=new Date();t.setHours(0,0,0,0);return Math.round((new Date(s+"T00:00:00")-t)/86400000);}
+function plural(n,w){return n+" "+w+(n===1?"":"s");}
+function status(s){var d=daysLeft(s);if(d<0)return {c:"closed",t:"Closed"};if(d<=14)return {c:"soon",t:"Closing soon ("+plural(d,"day")+" left)"};return {c:"open",t:"Open ("+plural(d,"day")+" left)"};}
+function shuffle(a,rnd){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(rnd()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+function seeded(seed){return function(){seed|=0;seed=seed+0x6D2B79F5|0;var t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+function toast(msg){var b=$("#toastbox");b.innerHTML='<div class="toast">'+esc(msg)+'</div>';setTimeout(function(){b.innerHTML="";},3200);}
+function checkBadgesQuiet(){var got=[];BADGES.forEach(function(b){if(S.badges.indexOf(b.id)<0&&b.ok()){S.badges.push(b.id);got.push(b);}});save();return got;}
+function checkBadges(){var got=checkBadgesQuiet();if(got.length){toast("New badge: "+got.map(function(b){return b.e+" "+b.n;}).join(", "));}return got;}
+function touchStreak(){var t=dayStr();if(S.lastDay===t)return;var y=new Date();y.setDate(y.getDate()-1);S.streak=(S.lastDay===dayStr(y))?S.streak+1:1;S.lastDay=t;}
+
+/* ---------- app state ---------- */
+var V={page:"home",subj:null,tab:"lessons",filter:"all",quiz:null,confirmReset:false};
+var timer=null;
+function stopTimer(){if(timer){clearInterval(timer);timer=null;}}
+
+var NAV=[["home","🏠","Home"],["learn","📚","Learn"],["contest","🏆","Contests"],["scholar","🎓","Scholarships"],["me","👤","Profile"]];
+function renderNav(){
+  var d=NAV.map(function(n){return '<button data-act="nav" data-p="'+n[0]+'"'+(V.page===n[0]?' aria-current="page"':'')+'>'+n[2]+'</button>';}).join("");
+  var b=NAV.map(function(n){return '<button data-act="nav" data-p="'+n[0]+'"'+(V.page===n[0]?' aria-current="page"':'')+'><span aria-hidden="true">'+n[1]+'</span>'+n[2]+'</button>';}).join("");
+  $("#navd").innerHTML=d;$("#navb").innerHTML=b;
+}
+
+/* ---------- views ---------- */
+function ringSvg(){var C=2*Math.PI*48,p=(S.xp%100)/100;return '<div class="ring"><svg viewBox="0 0 112 112" aria-hidden="true"><circle class="t" cx="56" cy="56" r="48"/><circle class="v" cx="56" cy="56" r="48" stroke-dasharray="'+C.toFixed(1)+'" stroke-dashoffset="'+(C*(1-p)).toFixed(1)+'"/></svg><b>Lv '+level()+'</b></div>';}
+function tilesHtml(){return '<div class="tiles">'+KEYS.map(function(k){var s=SUBJ[k],n=(S.right[k]||[]).length,b=S.best[k];return '<button class="tile" data-s="'+k+'" data-act="openSubj" data-k="'+k+'"><span class="top1">'+n+'/'+s.qs.length+' correct</span><span class="sym">'+s.sym+'</span><span><span class="nm">'+s.name+'</span><br><span class="sub">'+(b!=null?'Best score '+b+'/'+s.qs.length:'Not tried yet')+'</span></span></button>';}).join("")+'</div>';}
+function contestCard(c){
+  var st=status(c.reg),sv=S.saved.indexOf(c.id)>=0;
+  var tags=c.m.map(function(m){return '<span class="tag">'+(m==="umum"?"General":SUBJ[m].name)+'</span>';}).join(" ");
+  return '<article class="card"><div class="row"><h3>'+esc(c.n)+'</h3><button class="star" data-act="save" data-id="'+c.id+'" aria-label="'+(sv?'Remove from saved':'Save contest')+'" aria-pressed="'+sv+'">'+(sv?'★':'☆')+'</button></div><p class="muted" style="font-size:.9rem">'+esc(c.org)+'</p><div class="chips" style="margin-top:8px">'+tags+'<span class="tag '+st.c+'">'+st.t+'</span></div><p style="margin-top:10px">'+esc(c.d)+'</p><dl class="meta"><dt>Level</dt><dd>'+esc(c.lv)+'</dd><dt>Format</dt><dd>'+esc(c.mode)+'</dd><dt>Register by</dt><dd>'+fmtDate(c.reg)+'</dd><dt>Event date</dt><dd>'+fmtDate(c.ev)+'</dd><dt>Fee</dt><dd>'+esc(c.fee)+'</dd></dl></article>';
+}
+function viewHome(){
+  var greet=S.name?('Hi, '+esc(S.name)+'!'):'Hi, future champion!';
+  var nameBox=S.name?'':'<div class="namebox"><input id="nameIn" maxlength="20" placeholder="What is your name?" aria-label="Your name"><button class="btn sm" data-act="setName">Save</button></div>';
+  var daily=S.dailyDone===dayStr();
+  var board=RIVALS.concat([{n:S.name||"You",x:S.xp,me:true}]).sort(function(a,b){return b.x-a.x;});
+  var upcoming=CONTESTS.filter(function(c){return daysLeft(c.reg)>=0;}).sort(function(a,b){return a.reg<b.reg?-1:1;}).slice(0,2);
+  return '<section class="hero"><div><h1 class="wordmark" aria-label="Student of the Future"><span>STUDENT</span><span class="w2">OF THE</span><span class="w3">FUTURE</span></h1><p class="lede">Learn Grade 7 Math, Science, English, and Civics through short lessons, practice questions, and daily challenges. Earn XP, unlock badges, and get ready for the olympiads.</p></div><div class="me">'+ringSvg()+'<div><p class="who">'+greet+'</p><p class="muted" style="font-size:.9rem">'+(S.xp%100)+' / 100 XP to level '+(level()+1)+'</p><div class="chips"><span class="chip">🔥 '+plural(S.streak,"day")+' in a row</span><span class="chip">✨ '+S.xp+' XP</span></div>'+nameBox+'</div></div></section>'
+  +'<div class="daily"><div><h3>Daily challenge</h3><p>'+(daily?('You finished today\'s challenge with a score of '+S.dailyScore+'/5. Come back tomorrow!'):'5 mixed questions from all 6 subjects, 25 seconds each. Finish it for bonus XP.')+'</p></div><button class="btn" data-act="daily"'+(daily?' disabled':'')+'>'+(daily?'Done for today':'Start challenge')+'</button></div>'
+  +'<section class="blk"><h2>Choose a subject</h2>'+tilesHtml()+'</section>'
+  +'<section class="blk"><div class="row"><h2>Upcoming contests</h2><button class="btn ghost sm" data-act="nav" data-p="contest">See all</button></div><div class="grid2">'+upcoming.map(contestCard).join("")+'</div></section>'
+  +'<section class="blk"><h2>Class leaderboard (sample)</h2><div class="card"><ol class="lb">'+board.map(function(r,i){return '<li class="'+(r.me?'me1':'')+'"><span class="pos">'+(i+1)+'</span><span class="nm">'+esc(r.n)+'</span><span>'+r.x+' XP</span></li>';}).join("")+'</ol></div></section>';
+}
+function viewLearn(){
+  if(!V.subj){return '<section class="blk" style="margin-top:10px"><h2>Learn</h2><p class="muted" style="margin-bottom:14px">Pick a subject to read quick lessons or take a practice set.</p>'+tilesHtml()+'</section>';}
+  var k=V.subj,s=SUBJ[k],b=S.best[k];
+  var head='<button class="back" data-act="backSubj">← All subjects</button><div class="subhead" style="--c:'+SUBJ_COLOR[k]+'"><div class="sym">'+s.sym+'</div><div><h2 style="margin:0">Grade 7 '+s.name+'</h2><p class="muted">'+s.topics.length+' topics, '+s.qs.length+' practice questions</p></div></div><div class="tabs" role="tablist"><button role="tab" aria-selected="'+(V.tab==="lessons")+'" data-act="tab" data-t="lessons">Lessons</button><button role="tab" aria-selected="'+(V.tab==="practice")+'" data-act="tab" data-t="practice">Practice</button></div>';
+  if(V.tab==="lessons"){
+    return head+s.topics.map(function(t,i){return '<details'+(i===0?' open':'')+'><summary>'+esc(t.t)+'</summary><ul>'+t.p.map(function(x){return '<li>'+esc(x)+'</li>';}).join("")+'</ul><p class="fact"><b>Did you know?</b> '+esc(t.f)+'</p></details>';}).join("");
+  }
+  return head+'<div class="card"><h3>'+s.name+' practice</h3><p class="muted" style="margin:6px 0 14px">'+s.qs.length+' multiple-choice questions. Question and answer order is shuffled every time. Each correct answer earns +10 XP, and a perfect score earns a +20 XP bonus.</p><p style="margin-bottom:14px"><b>Best score:</b> '+(b!=null?b+'/'+s.qs.length:'none yet')+'</p><button class="btn" data-act="startQuiz" data-k="'+k+'">Start practice</button></div>';
+}
+function viewContest(){
+  var f=V.filter;
+  var opts=[["all","All"],["mat","Mathematics"],["kim","Chemistry"],["fis","Physics"],["bio","Biology"],["eng","English"],["pkn","Civics"],["umum","General"],["saved","Saved"]];
+  var list=CONTESTS.filter(function(c){return f==="all"||(f==="saved"?S.saved.indexOf(c.id)>=0:c.m.indexOf(f)>=0);}).sort(function(a,b){return a.reg<b.reg?-1:1;});
+  return '<section class="blk" style="margin-top:10px"><h2>Olympiads and contests</h2><p class="notice">All contest data on this page is fictional sample data for demonstration only.</p><div class="filters" role="group" aria-label="Filter contests">'+opts.map(function(o){return '<button class="chip" data-act="filter" data-f="'+o[0]+'" aria-pressed="'+(f===o[0])+'">'+o[1]+'</button>';}).join("")+'</div>'+(list.length?'<div class="grid2">'+list.map(contestCard).join("")+'</div>':'<div class="card"><p>No contests in this category yet. Try another filter, or tap ☆ on a contest card to save it.</p></div>')+'</section>';
+}
+function viewScholar(){
+  return '<section class="blk" style="margin-top:10px"><h2>Scholarships</h2><p class="notice">All scholarships on this page are fictional samples. Tick the requirements you have prepared to track your progress.</p><div class="grid2">'+SCHOL.slice().sort(function(a,b){return a.dl<b.dl?-1:1;}).map(function(s){
+    var c=S.reqs[s.id]||[],n=c.filter(Boolean).length,st=status(s.dl),pct=Math.round(n/s.r.length*100);
+    return '<article class="card"><h3>'+esc(s.n)+'</h3><p class="muted" style="font-size:.9rem">'+esc(s.org)+'</p><div class="chips" style="margin-top:8px"><span class="tag '+st.c+'">'+st.t+'</span></div><dl class="meta"><dt>Benefit</dt><dd>'+esc(s.b)+'</dd><dt>Deadline</dt><dd>'+fmtDate(s.dl)+'</dd></dl><h3 style="font-size:.98rem;margin:14px 0 4px">Requirements ('+n+'/'+s.r.length+')</h3><div class="bar" style="--c:var(--kim);margin-bottom:6px"><i style="width:'+pct+'%"></i></div>'+s.r.map(function(r,i){return '<label class="req"><input type="checkbox" data-act="req" data-id="'+s.id+'" data-i="'+i+'"'+(c[i]?' checked':'')+'><span>'+esc(r)+'</span></label>';}).join("")+'</article>';
+  }).join("")+'</div></section>';
+}
+function viewMe(){
+  var th=[["auto","Auto"],["light","Light"],["dark","Dark"]];
+  var total=0;KEYS.forEach(function(k){total+=(S.right[k]||[]).length;});
+  return '<section class="blk" style="margin-top:10px"><h2>Profile</h2><div class="card"><div class="row" style="flex-wrap:wrap"><div><p style="font-weight:700;font-size:1.15rem">'+esc(S.name||"Future champion")+'</p><p class="muted">Level '+level()+', '+S.xp+' XP, '+plural(S.streak,"day")+' in a row</p></div></div><div class="namebox"><input id="nameIn" maxlength="20" value="'+esc(S.name)+'" placeholder="Change name" aria-label="Your name"><button class="btn sm" data-act="setName">Save name</button></div><p class="muted" style="margin-top:12px">Different questions answered correctly: '+total+' of '+(KEYS.length*8)+'. Practice sets finished: '+S.quizzes+'.</p></div>'
+  +'<section class="blk"><h2>Badges ('+S.badges.length+'/'+BADGES.length+')</h2><div class="badges">'+BADGES.map(function(b){var on=S.badges.indexOf(b.id)>=0;return '<div class="badge'+(on?'':' lock')+'"><div class="e" aria-hidden="true">'+b.e+'</div><b>'+b.n+'</b><small>'+b.d+'</small></div>';}).join("")+'</div></section>'
+  +'<section class="blk"><h2>Settings</h2><div class="card"><p style="margin-bottom:8px"><b>Appearance</b></p><div class="filters" role="group" aria-label="Theme">'+th.map(function(t){return '<button class="chip" data-act="theme" data-t="'+t[0]+'" aria-pressed="'+(S.theme===t[0])+'">'+t[1]+'</button>';}).join("")+'</div><p class="muted" style="font-size:.9rem;margin-bottom:10px">Progress is saved in this browser on this device.</p>'+(V.confirmReset?'<p style="margin-bottom:8px"><b>Delete all progress and start over?</b></p><button class="btn sm" style="background:var(--bad);color:#fff" data-act="reset">Yes, delete</button> <button class="btn ghost sm" data-act="cancelReset">Cancel</button>':'<button class="btn ghost sm" data-act="askReset">Reset progress</button>')+'</div></section></section>';
+}
+
+/* ---------- quiz ---------- */
+function buildQuiz(mode,k){
+  var rnd=seeded(mode==="daily"?parseInt(dayStr().replace(/-/g,""),10):Math.floor(Math.random()*1e9));
+  var pool=[];
+  if(mode==="daily"){KEYS.forEach(function(kk){SUBJ[kk].qs.forEach(function(q,i){pool.push({s:kk,i:i,q:q});});});pool=shuffle(pool,rnd).slice(0,5);}
+  else{SUBJ[k].qs.forEach(function(q,i){pool.push({s:k,i:i,q:q});});pool=shuffle(pool,rnd);}
+  var r2=Math.random;
+  var items=pool.map(function(p){var idx=shuffle([0,1,2,3],r2);return {s:p.s,i:p.i,q:p.q.q,o:idx.map(function(j){return p.q.o[j];}),a:idx.indexOf(p.q.a),e:p.q.e};});
+  return {mode:mode,k:k,items:items,n:0,score:0,picked:null,done:false,xpGain:0,newBadges:[]};
+}
+function startTimer(){
+  stopTimer();var Q=V.quiz;if(!Q||Q.mode!=="daily"||Q.picked!==null||Q.done)return;
+  var t0=Date.now();
+  timer=setInterval(function(){
+    var el=Date.now()-t0,left=Math.max(0,25-el/1000),bar=$("#tbar");
+    if(bar)bar.style.width=(left/25*100)+"%";
+    if(left<=0){stopTimer();answer(-1);}
+  },100);
+}
+function viewQuiz(){
+  var Q=V.quiz,col=Q.mode==="daily"?"var(--sun)":SUBJ_COLOR[Q.k];
+  var title=Q.mode==="daily"?"Daily challenge":SUBJ[Q.k].name;
+  if(Q.done){
+    var tot=Q.items.length,stars=Q.score===tot?3:Q.score/tot>=0.6?2:Q.score>0?1:0;
+    var starStr="★".repeat(stars)+"☆".repeat(3-stars);
+    var msg=Q.score===tot?"Perfect! You are outstanding.":Q.score/tot>=0.6?"Great job! Almost perfect.":"Keep going. Read the lessons and try again.";
+    return '<div class="qwrap"><div class="card result"><p class="muted">'+title+' complete</p><div class="big">'+Q.score+'/'+tot+'</div><div class="stars" style="color:var(--sun)" aria-label="'+stars+' out of 3 stars">'+starStr+'</div><p>'+msg+'</p><p style="margin-top:8px"><b>+'+Q.xpGain+' XP</b> earned</p>'+(Q.newBadges.length?'<p style="margin-top:8px">New badge: '+Q.newBadges.map(function(b){return b.e+" "+esc(b.n);}).join(", ")+'</p>':'')+'<div class="actions">'+(Q.mode==="daily"?'':'<button class="btn" data-act="startQuiz" data-k="'+Q.k+'">Practice again</button>')+'<button class="btn ghost" data-act="exitQuiz">'+(Q.mode==="daily"?"Back to home":"Back to subject")+'</button></div></div></div>';
+  }
+  var it=Q.items[Q.n],L=["A","B","C","D"];
+  var opts=it.o.map(function(o,i){var cls="opt";if(Q.picked!==null){if(i===it.a)cls+=" ok";else if(i===Q.picked)cls+=" bad";}return '<button class="'+cls+'" data-act="pick" data-i="'+i+'"'+(Q.picked!==null?' disabled':'')+'>'+L[i]+'. '+esc(o)+'</button>';}).join("");
+  var fb="";
+  if(Q.picked!==null){var ok=Q.picked===it.a;fb='<div class="expl"><b>'+(ok?"Correct! +10 XP":(Q.picked===-1?"Time is up.":"Not quite."))+'</b><br>'+esc(it.e)+'</div><div class="actions" style="justify-content:flex-end"><button class="btn" data-act="next">'+(Q.n===Q.items.length-1?"See results":"Next question")+'</button></div>';}
+  return '<div class="qwrap" style="--c:'+col+'"><button class="back" data-act="exitQuiz">← Exit</button><div class="qtop"><span>'+title+'</span><span>Question '+(Q.n+1)+' of '+Q.items.length+'</span></div><div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="'+Q.items.length+'" aria-valuenow="'+Q.n+'"><i style="width:'+(Q.n/Q.items.length*100)+'%"></i></div>'+(Q.mode==="daily"?'<div class="bar timer" style="margin-top:8px" aria-hidden="true"><i id="tbar" style="width:100%"></i></div>':'')+'<div class="card qcard"><p class="q">'+esc(it.q)+'</p>'+opts+fb+'</div></div>';
+}
+function answer(i){
+  var Q=V.quiz;if(!Q||Q.picked!==null)return;
+  stopTimer();Q.picked=i;var it=Q.items[Q.n];
+  if(i===it.a){
+    Q.score++;Q.xpGain+=10;S.xp+=10;
+    var arr=S.right[it.s]=S.right[it.s]||[];if(arr.indexOf(it.i)<0)arr.push(it.i);
+  }
+  save();render();
+}
+function finishQuiz(){
+  var Q=V.quiz,tot=Q.items.length;Q.done=true;
+  if(Q.score===tot){Q.xpGain+=20;S.xp+=20;S.perfect=true;}
+  if(Q.mode==="daily"){S.dailyDone=dayStr();S.dailyScore=Q.score;Q.xpGain+=10;S.xp+=10;}
+  else{S.played[Q.k]=true;if(S.best[Q.k]==null||Q.score>S.best[Q.k])S.best[Q.k]=Q.score;}
+  S.quizzes++;touchStreak();
+  Q.newBadges=checkBadgesQuiet();
+  save();render();
+}
+
+/* ---------- render + events ---------- */
+function render(){
+  stopTimer();
+  var v=$("#view");
+  if(V.quiz){v.innerHTML=viewQuiz();startTimer();}
+  else{v.innerHTML={home:viewHome,learn:viewLearn,contest:viewContest,scholar:viewScholar,me:viewMe}[V.page]();}
+  renderNav();
+}
+function go(p){V.page=p;V.quiz=null;V.confirmReset=false;if(p!=="learn"){V.subj=null;V.tab="lessons";}render();window.scrollTo(0,0);}
+
+document.addEventListener("click",function(e){
+  var el=e.target.closest("[data-act]");if(!el)return;
+  var a=el.getAttribute("data-act");
+  switch(a){
+    case "nav":go(el.getAttribute("data-p"));break;
+    case "openSubj":V.page="learn";V.subj=el.getAttribute("data-k");V.tab="lessons";render();window.scrollTo(0,0);break;
+    case "backSubj":V.subj=null;render();break;
+    case "tab":V.tab=el.getAttribute("data-t");render();break;
+    case "startQuiz":V.page="learn";V.subj=el.getAttribute("data-k");V.quiz=buildQuiz("subject",V.subj);render();window.scrollTo(0,0);break;
+    case "daily":if(S.dailyDone!==dayStr()){V.quiz=buildQuiz("daily");render();window.scrollTo(0,0);}break;
+    case "pick":answer(parseInt(el.getAttribute("data-i"),10));break;
+    case "next":var Q=V.quiz;if(Q.n>=Q.items.length-1){finishQuiz();}else{Q.n++;Q.picked=null;render();}break;
+    case "exitQuiz":stopTimer();var wasDaily=V.quiz&&V.quiz.mode==="daily";V.quiz=null;if(wasDaily){V.page="home";}render();window.scrollTo(0,0);break;
+    case "filter":V.filter=el.getAttribute("data-f");render();break;
+    case "save":var id=el.getAttribute("data-id"),ix=S.saved.indexOf(id);if(ix<0)S.saved.push(id);else S.saved.splice(ix,1);save();render();checkBadges();break;
+    case "setName":var inp=$("#nameIn");if(inp){S.name=inp.value.trim().slice(0,20);save();render();}break;
+    case "theme":S.theme=el.getAttribute("data-t");save();applyTheme();render();break;
+    case "askReset":V.confirmReset=true;render();break;
+    case "cancelReset":V.confirmReset=false;render();break;
+    case "reset":try{localStorage.removeItem(KEY);}catch(er){}S=DEFAULT_STATE();applyTheme();V.confirmReset=false;render();toast("Progress has been reset.");break;
+  }
+});
+document.addEventListener("change",function(e){
+  var el=e.target;if(el.getAttribute("data-act")!=="req")return;
+  var id=el.getAttribute("data-id"),i=parseInt(el.getAttribute("data-i"),10);
+  var arr=S.reqs[id]=S.reqs[id]||[];arr[i]=el.checked;save();render();checkBadges();
+});
+document.addEventListener("keydown",function(e){
+  if(e.key==="Enter"&&e.target.id==="nameIn"){S.name=e.target.value.trim().slice(0,20);save();render();}
+});
+render();
+})();
+</script>
+</body>
+</html>
